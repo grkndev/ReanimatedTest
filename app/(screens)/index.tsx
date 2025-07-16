@@ -1,17 +1,22 @@
+import HeadBar from "@/components/headbar";
 import { Link } from "expo-router";
+import React from "react";
 import { FlatList, Text } from "react-native";
 
 
 export default function Home() {
 
-  return <FlatList data={Screens}
-    renderItem={({ item }) => <Link href={item.href as any} asChild>
-      <Text className="bg-blue-500 rounded-2xl text-white text-center p-4">{item.name}</Text>
-    </Link>}
-    keyExtractor={(item) => item.id.toString()}
-    contentContainerStyle={{ gap: 10 }}
-    className="p-4"
-  />
+  return <React.Fragment>
+    <HeadBar title='Home' />
+    <FlatList data={Screens}
+      renderItem={({ item }) => <Link href={item.href as any} asChild>
+        <Text className="bg-blue-500 rounded-2xl text-white text-center p-4">{item.name}</Text>
+      </Link>}
+      keyExtractor={(item) => item.id.toString()}
+      contentContainerStyle={{ gap: 10 }}
+      className="p-4"
+    />
+  </React.Fragment>
 
 }
 

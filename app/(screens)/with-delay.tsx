@@ -1,3 +1,4 @@
+import HeadBar from '@/components/headbar';
 import React from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Animated, { useSharedValue, withDelay, withTiming } from 'react-native-reanimated';
@@ -30,20 +31,22 @@ export default function Delay() {
   }
 
 
-  return <View className='flex-1 items-center  gap-4 p-8'>
-    <Text className='text-2xl font-bold'>Delay</Text>
+  return <React.Fragment>
+    <HeadBar title='Delay' />
+    <View className='flex-1 items-center  gap-4 p-8'>
+    
+      <View className='justify-start w-full items-start p-4'>
 
-    <View className='justify-start w-full items-start p-4'>
+        <Animated.Text style={{ opacity: opacity1 }} className='text-[72px] font-bold'>React</Animated.Text>
+        <Animated.Text style={{ opacity: opacity2 }} className='text-[72px] font-bold'>Native</Animated.Text>
+        <Animated.Text style={{ opacity: opacity3 }} className='text-[54px] font-bold'>Reanimated</Animated.Text>
+      </View>
 
-      <Animated.Text style={{ opacity: opacity1 }} className='text-[72px] font-bold'>React</Animated.Text>
-      <Animated.Text style={{ opacity: opacity2 }} className='text-[72px] font-bold'>Native</Animated.Text>
-      <Animated.Text style={{ opacity: opacity3 }} className='text-[54px] font-bold'>Reanimated</Animated.Text>
+      <Pressable onPress={handleDelay} className='bg-zinc-900 p-4 rounded-2xl items-center justify-center w-full'>
+        <Text className='text-white text-lg font-bold'>Toggle</Text>
+      </Pressable>
+
     </View>
-
-    <Pressable onPress={handleDelay} className='bg-zinc-900 p-4 rounded-2xl items-center justify-center w-full'>
-      <Text className='text-white text-lg font-bold'>Toggle</Text>
-    </Pressable>
-
-  </View>
+  </React.Fragment>
 
 }
