@@ -40,5 +40,10 @@ const Screens: { id: number, name: string, href: string }[] = [
     id: 4,
     name: 'With Delay',
     href: '/(screens)/with-delay'
+  },
+  {
+    id: 5,
+    name: 'Loading Example',
+    href: '/(screens)/loadingExample'
   }
 ]
